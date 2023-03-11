@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Users</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container row ">
+
+        <form action="/update" method="post" class="col-6 mx-auto">
+            <h1>Editar {{user[0]['first_name']}} </h1>
+            <div class="form-group">
+                <label for="first_name">Nombre</label>
+                <input type="text" value="{{user[0]['first_name']}}" id="first_name" name="first_name" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="last_name">Apellido</label>
+                <input type="text" value="{{user[0]['last_name']}}" id="last_name" name="last_name" class="form-control"  required>
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" value="{{user[0]['email']}}" id="email" name="email" class="form-control" required>
+            </div>
+            <input type="hidden" name="id" value="{{user[0]['id']}}">
+            <input type="submit" value="Guardar" class="btn btn-success mt-4">
+
+            <a href="/show/{{id.id}}" class="btn btn-primary mt-4 ">Mostrar Usuario</a> 
+
+        </form>
+
+        <div class="col-1  ">
+            <a href="/" class="btn btn-primary mt-4 ">Inicio</a> 
+            
+        </div>
+
+
+    </div>
+    
+</body>
+</html>
